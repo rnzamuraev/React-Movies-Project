@@ -19,3 +19,23 @@ body {
   );
   gap: 20px;
 }
+/* #search {
+  width: calc(100% - 100px);
+} */
+.search {
+  display: grid;
+  grid-template-columns: 1fr 100px;
+  align-items: center;
+}
+.radio {
+  padding-bottom: 10px;
+}
+.radio__filter:not(:last-child) {
+  margin-right: 20px;
+}
+[type="radio"]:not(:checked) + span {
+  padding-left: 25px;
+}
+[type="radio"]:checked + span {
+  padding-left: 25px;
+}

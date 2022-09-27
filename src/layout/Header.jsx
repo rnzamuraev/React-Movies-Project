@@ -1,7 +1,7 @@
-function Header() {
+export function Header() {
   return (
     <header>
-      <nav className="green darken-1">
+      <nav className="teal lighten-1">
         <div className="nav-wrapper container">
           <a href="!#" className="brand-logo">
             React Movies
@@ -25,5 +25,3 @@ function Header() {
     </header>
   );
 }
-
-export { Header };

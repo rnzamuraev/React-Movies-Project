@@ -1,7 +1,7 @@
-function Footer() {
+export function Footer() {
   return (
     <footer className="page-footer white">
-      <div className="footer-copyright green darken-1">
+      <div className="footer-copyright teal lighten-1">
         <div className="container">
           © {new Date().getFullYear()} Copyright Text
           <a
@@ -15,5 +15,3 @@ function Footer() {
     </footer>
   );
 }
-
-export { Footer };
