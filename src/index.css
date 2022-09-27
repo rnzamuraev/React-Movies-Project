@@ -6,11 +6,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 .main {
   min-height: calc(100vh - 70px - 64px);
 }
-
 .movies {
   display: grid;
   grid-template-columns: repeat(
@@ -19,9 +17,6 @@ body {
   );
   gap: 20px;
 }
-/* #search {
-  width: calc(100% - 100px);
-} */
 .search {
   display: grid;
   grid-template-columns: 1fr 100px;

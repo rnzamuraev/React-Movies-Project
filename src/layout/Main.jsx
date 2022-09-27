@@ -12,7 +12,7 @@ export class Main extends Component {
     this.state = {
       movies: [],
       loading: true,
-      search: "",
+      search: "avengers",
       filter: "all",
     };
   }
@@ -24,7 +24,7 @@ export class Main extends Component {
     // const filter = this.setState({ filter: });
 
     fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s=avengers${
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=avengers${
         filter === "all" ? "" : `&type=${filter}`
       }`
     )
@@ -34,24 +34,22 @@ export class Main extends Component {
           movies: data.Search,
           loading: false,
         })
-      );
+      )
+      .catch((err) => {
+        console.error(err);
+        this.setState({ loading: false });
+      });
   }
 
   searchMovies = () => {
     this.setState({ loading: true });
-    const {
-      filter,
-      search,
-      movies = "avengers",
-    } = this.state;
-    // const search = this.state.search;
-    // const filter = this.state.filter;
+    const { filter, search, movies } = this.state;
 
     if (search === "" || movies === []) {
       return this.state.movies;
     }
     fetch(
-      `http://www.omdbapi.com/?apikey=${API_KEY}&s=${search}${
+      `https://www.omdbapi.com/?apikey=${API_KEY}&s=${search}${
         filter === "all" ? "" : `&type=${filter}`
       }`
     )
@@ -61,7 +59,11 @@ export class Main extends Component {
           movies: data.Search,
           loading: false,
         })
-      );
+      )
+      .catch((err) => {
+        console.error(err);
+        this.setState({ loading: false });
+      });
   };
 
   handleKey = (e) => {

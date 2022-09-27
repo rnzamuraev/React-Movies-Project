@@ -39,12 +39,23 @@ export function RadioBtn(props) {
         <input
           className="with-gap"
           name="filter"
+          data-filter="episode"
+          type="radio"
+          checked={filter === "episode"}
+          onChange={handleFilter}
+        />
+        <span>Episode only</span>
+      </label>
+      <label className="radio__filter">
+        <input
+          className="with-gap"
+          name="filter"
           data-filter="game"
           type="radio"
           checked={filter === "game"}
           onChange={handleFilter}
         />
-        <span>Game</span>
+        <span>Game only</span>
       </label>
     </div>
   );
